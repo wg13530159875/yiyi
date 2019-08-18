@@ -1,0 +1,38 @@
+#在dev分支开始提交咱们的文件
+git add *
+git commit -m "笔记"
+#现在，dev分支的工作已经做完了， 切换到master分支
+git checkout master
+
+git merge dev
+#将dev合并到master分支上面
+#合并完成以后就可以放心的删除
+git branch -d dev
+
+#查看有几个分支
+git branch
+#然后进行提交
+git push -u  origin master 
+
+冲突的解决
+场景：一个写了一个settings.py文件   内容  1111
+通过自己的分支commit
+第二个人 修改了settings.py文件  22222
+通过自己的分支提交commmit（这个会出现问题）冲突了
+
+git checkout -b bug #创建一个bug的分支
+git add 1.txt#添加了一个文件
+git commit -m "bssbn"#提交
+
+git checkout master #回到主分支
+git add 1.txt#添加了一个文件(修改之后的文件)
+git commit -m "dshdjsjk"#提交
+git merge bug #出错了
+
+手动解决
+git add 1.txt#添加了一个文件
+git commit -m "ssnn"
+git push -u origin master
+
+
+
